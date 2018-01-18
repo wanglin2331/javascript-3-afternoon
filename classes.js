@@ -69,9 +69,9 @@ class  Manager {
     this.age = age;
     this.reports = [];
   }
-  makeWidget(){return this.first_name+' '+this.last_name+' Widget';} 
-  hire(employee){return this.reports.push(employee);}
-  fire(index){return this.reports.splice(index,1);}
+  makeWidget(){this.first_name+' '+this.last_name+' Widget';} 
+  hire(employee){this.reports.push(employee);}
+  fire(index){this.reports.splice(index,1);}
 }
 
 
@@ -111,7 +111,7 @@ class ProgressiveManager {
   makeWidget(){return this.first_name+' '+this.last_name+' Widget';} 
   hire(employee){return this.reports.push(employee);}
   fire(index){return this.reports.splice(index,1);}
-  changeTitle(hire){if (employees==0){this.title='Not a manager';}
+  changeTitle(hire){if (hire==0){this.title='Not a manager';}
                   else if (hire>=1 && hire<=3){this.title='Barely Manager';}
                   else if (hire>=4 && hire<=10){this.title='Mostly Manager';}
                   else if (hire>=11 && hire<=50){this.title='Manager';}
@@ -146,5 +146,19 @@ class ProgressiveManager {
 */
 
 //Code Here
+class Machine {
+  constructor(){
+    this.widgets_made_count = 0;
+    this.wear_and_tear_count = 0;
+    this.needs_reboot = false;
+  }
+  makeWidgets(num){this.widgets_made_count+=num;
+                  this.wear_and_tear_count+=Math.floor(num/50);
+                  }
+  fixMachine(){this.needs_reboot = true;}
+  reboot(){function cb(){this.wear_and_tear_count-=10;
+             this.needs_reboot = false;}
+            ;}
 
+}
 
