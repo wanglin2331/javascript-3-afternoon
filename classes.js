@@ -30,6 +30,17 @@
 */
 
 //Code Here
+class Employee {
+  constructor (first_name,last_name,email,age){
+    this.first_name = first_name;
+    this.last_name = last_name;
+    this.email = email;
+    this.age = age;
+  }
+    makeWidget(){return this.first_name+' '+this.last_name+' Widget';} 
+}
+
+
 
 
 
@@ -50,7 +61,18 @@
 */
 
 //Code Here
-
+class  Manager {
+  constructor (first_name,last_name,email,age,reports){
+    this.first_name = first_name;
+    this.last_name = last_name;
+    this.email = email;
+    this.age = age;
+    this.reports = [];
+  }
+  makeWidget(){return this.first_name+' '+this.last_name+' Widget';} 
+  hire(employee){return this.reports.push(employee);}
+  fire(index){return this.reports.splice(index,1);}
+}
 
 
 ////////// PROBLEM 3 //////////
@@ -76,7 +98,28 @@
 */
 
 //Code Here
-
+class ProgressiveManager {
+  constructor (first_name,last_name,email,age,reports,title,bonus){
+    this.first_name = first_name;
+    this.last_name = last_name;
+    this.email = email;
+    this.age = age;
+    this.reports = [];
+    this.title ='Not a manager';
+    this.bonus = 0;
+  }
+  makeWidget(){return this.first_name+' '+this.last_name+' Widget';} 
+  hire(employee){return this.reports.push(employee);}
+  fire(index){return this.reports.splice(index,1);}
+  changeTitle(hire){if (employees==0){this.title='Not a manager';}
+                  else if (hire>=1 && hire<=3){this.title='Barely Manager';}
+                  else if (hire>=4 && hire<=10){this.title='Mostly Manager';}
+                  else if (hire>=11 && hire<=50){this.title='Manager';}
+                  else if (hire>=51 && hire<=100){this.title='Manager Plus';}
+                  else {this.title='Bestest Manager'}
+                  ;}
+  getBonus(){return this.bonus+=100}
+                }
 
 
 ////////// PROBLEM 4 - Black Diamond //////////
